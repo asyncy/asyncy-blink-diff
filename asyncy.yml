@@ -1,0 +1,20 @@
+volume: true
+
+entrypoint:
+
+  args:
+  - name: before
+    type: folder
+  - name: after
+    type: folder
+  - name: output
+    type: folder
+
+  kwargs:
+    threshold:
+
+  additional_args: false
+  additional_kwargs: false
+
+  result:
+    type: list
