@@ -2,6 +2,6 @@ FROM          node:9.7-alpine
 
 RUN           npm install blink-diff
 
-ADD           app.js app.js
+ADD           . .
 
-ENTRYPOINT    ["node", "app.js"]
+ENTRYPOINT    ["./entrypoint.sh"]

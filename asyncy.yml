@@ -1,20 +1,26 @@
-volume: true
-
-entrypoint:
-
-  args:
-  - name: before
-    type: folder
-  - name: after
-    type: folder
-  - name: output
-    type: folder
-
-  kwargs:
-    threshold:
-
-  additional_args: false
-  additional_kwargs: false
-
+commands:
+  one:
+    args:
+    - before:file
+    - after:file
+    - output:file|folder
+    kwargs:
+    - name: threshold
+      type: int
+      help: Percentage of threshold.
+      default: 0.01
   result:
-    type: list
+    type: json
+
+  many:
+    args:
+    - before:folder
+    - after:folder
+    - output:folder
+    kwargs:
+    - name: threshold
+      type: int
+      help: Percentage of threshold.
+      default: 0.01
+  result:
+    type: json
