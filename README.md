@@ -3,5 +3,5 @@
 ### Usage
 
 ```
-results = blink-diff `/old` `/new` `/output`
+results = blink-diff many `/old` `/new` `/output`
 ```

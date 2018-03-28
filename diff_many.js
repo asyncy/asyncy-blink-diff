@@ -1,5 +1,7 @@
 var BlinkDiff = require('blink-diff');
 const fs = require('fs');
+const path = require('path');
+
 
 var oldRootPath = process.argv[3];
 var newRootPath = process.argv[4];
@@ -28,9 +30,9 @@ var totalFailed = 0;
 
 both(oldFiles, newFiles).forEach(filename => {
   var diff = new BlinkDiff({
-    imageAPath: oldRootPath + '/' + filename,
-    imageBPath: newRootPath + '/' + filename,
-    imageOutputPath: outputRootPath + '/' + filename,
+    imageAPath: path.join(oldRootPath, filename),
+    imageBPath: path.join(newRootPath, filename),
+    imageOutputPath: path.join(outputRootPath, filename),
     thresholdType: BlinkDiff.THRESHOLD_PERCENT,
     threshold: threshold,
     composition: false
