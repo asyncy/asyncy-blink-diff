@@ -29,6 +29,7 @@ var totalPassed = 0;
 var totalFailed = 0;
 
 both(oldFiles, newFiles).forEach(filename => {
+  // [TODO] assert the file is not empty: bytes=0
   var diff = new BlinkDiff({
     imageAPath: path.join(oldRootPath, filename),
     imageBPath: path.join(newRootPath, filename),
