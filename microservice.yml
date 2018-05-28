@@ -1,0 +1,36 @@
+commands:
+  one:
+    format: one {before} {after} {dest} {threshold}
+    arguments:
+      before:
+        type: file
+        required: true
+      after:
+        type: file
+        required: true
+      dest:
+        type: file
+        required: true
+        help: Location to save the results.
+      threshold:
+        type: int
+        help: Percentage of threshold.
+        default: 0.01
+
+  many:
+    format: many {before} {after} {dest} {threshold}
+    arguments:
+      before:
+        type: file
+        required: true
+      after:
+        type: file
+        required: true
+      dest:
+        type: file
+        required: true
+        help: Location to save the results.
+    threshold:
+      type: int
+      help: Percentage of threshold.
+      default: 0.01
